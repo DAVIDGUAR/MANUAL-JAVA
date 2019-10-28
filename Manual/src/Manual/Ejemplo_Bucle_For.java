@@ -38,33 +38,50 @@ public class Ejemplo_Bucle_For {
         int arroba = 0;
 
         boolean punto = false;
+        boolean a = false;
 
-        String email = JOptionPane.showInputDialog("Introduce tu correo electronico: ");
+        while (a == false) {//nos vale para que mientras no lo introduzcamos correcto nos lo sigue pidiendo
+            String email = JOptionPane.showInputDialog("Introduce tu correo electronico: ");
 
-        for (int i = 0; i < email.length(); i++) {//conrtador, lo que cuenta es el numero de letras que tiene el email y repite el bucle tantas veces como letras tenga el email.
+            for (int i = 0; i < email.length(); i++) {//contador, lo que cuenta es el numero de letras que tiene el email y repite el bucle tantas veces como letras tenga el email.
 
-            if (email.charAt(i) == '@') {//busca el caracter selecionado
+                if (email.charAt(i) == '@') {//busca el caracter selecionado
 
-                arroba++;
+                    arroba++;
+
+                }
+
+                if (email.charAt(i) == '.') {//busca otro caracter.
+
+                    punto = true;
+
+                }
 
             }
 
-            if (email.charAt(i) == '.') {//busca otro caracter.
+            if (punto == true && arroba == 1) { //comprueba si cumple las dos condiciones anteriores.
 
-                punto = true;
+                System.out.println("CORRECTRO");//imprime este texto si cumple las dos condiciones anteriores.
+
+                a = true;//nos sirve para salir del buble
+
+            } else {
+
+                System.out.println("INCORRECTO, vuelva a introducirla");//imprime este otro si alguna de las condiciones anteriores no se cumplo o las dos.
+                
+                
+                //Sirven para que cuando introduciomos un correo con solo uno de los valores(punto o arroba) nos vuelva a poner la variable como la inicializamos 
+                //y no nos de el conflicto, de cuando volvamos a intentar introducir las variables empiecen con el valor cambiado.  
+                //Ej. 
+                //1ºINTENTO = david@fdsf------- NOS GUARDA LA VARIABLE COMO: arroba = 1; 
+                //2ºINTENTO = david.ggkg------- NOS GUARDARIA LA VARIABLE COMO: punto = true;  nos lo daria como correcto ya que comple la condicion --if (punto == true && arroba == 1)
+                //en caso de introducir el intento 1 o 2 varias veces consecutivas nos daria un bucle infinito. 
+               punto = false;
+               arroba = 0;
 
             }
 
-        }
-
-        if (arroba == 1 && punto == true) { //comprueba si cumple las dos condiciones anteriores.
-
-            System.out.println("CORRECTRO");//imprime este texto si cumple las dos condiciones anteriores.
-
-        } else {
-            System.out.println("INCORRECTO, vuelva a introducirla");//imprime este otro si alguna de las condiciones anteriores no se cumplo o las dos.
         }
 
     }
-
 }
