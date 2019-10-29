@@ -5,6 +5,8 @@
  */
 package ejemplo_objeto;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author david
@@ -28,12 +30,12 @@ public class Uso_coche {
           System.out.println("AUDI");audi.visualizacion();
          seat.dar_motor();//no hace nada
           System.out.println("Potencia motor= "+audi.dar_motor()+"c.c.");
-          
-          seat.setClimatizador("si");
+          seat.setClimatizador(JOptionPane.showInputDialog("tu coche tiene climatizador??"));
+          //seat.setClimatizador("no");
           System.out.println("Climatizador = "+seat.getClimatizador());
           
           seat.setNavegador("yes");
-          
+          System.out.println("Navegador = "+seat.getNavegador());
           
           System.out.println(seat.set_get_peso());
           
