@@ -89,7 +89,8 @@ class Empleado {
     
     public static String numero_ref_empleado(){
         
-       return "El numero de empleado siguiente sera : "+ref; 
-    } 
+       return "El numero de empleado siguiente sera : "+ref; //Un metodo statc:  -no actua sobre objetos
+                                                            //                   -solo puede aceder a variables/contantes si son declaradas como static ej: private static int ref=1;
+    }                                                       //                   -para llamarlo nombre_clase.nombre_metodo
 
 }
