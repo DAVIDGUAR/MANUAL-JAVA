@@ -19,7 +19,7 @@ public class Ejemplo_sobrecarga_constructores {
         mis_empleados[0] = new Empleado1("David", 1000, 2009, 9, 22);
         mis_empleados[1] = new Empleado1("Maria");
         mis_empleados[2] = new Empleado1("Daniel", 1200, 2018, 12, 06);
-        mis_empleados[3] = new Empleado1("Juan");
+        mis_empleados[3] = new Empleado1();
         mis_empleados[4] = new Empleado1("juan", 2000);
 
         for (int i = 0; i < mis_empleados.length; i++) {
@@ -64,12 +64,26 @@ class Empleado1 {
     public Empleado1(String nombre, int sueldo) {
         this(nombre,sueldo,2000,12,31);
     }
+    
+    
+    
 
     /* public Empleado1(String nombre, int num) {            no nos deja porque tiene 2 parametros igual que el de arriva String  y  int(aunque este int no tiene el mismo nombre).
      this.nombre = nombre;
      this.num = num;
      }
      */
+
+    public Empleado1() {
+        
+        this("yo",3500,1998,1,15);
+    }
+    
+    
+    
+    
+    
+    
     public int getSueldo() {
         return sueldo;
     }
