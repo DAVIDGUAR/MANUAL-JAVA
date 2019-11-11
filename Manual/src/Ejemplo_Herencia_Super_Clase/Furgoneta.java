@@ -24,11 +24,7 @@ public class Furgoneta extends Coche1 {
     }
     
     
-    public void visualizacionFurgoneta(){
-        
-        
-        
-    }
+  
     
 
     @Override
