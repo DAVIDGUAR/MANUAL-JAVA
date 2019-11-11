@@ -1,5 +1,5 @@
 
-package ejemplo_objeto_unico_fichero;
+package Ejemplo_Poo_Fichero_Unico;
 
 import java.util.*;
 

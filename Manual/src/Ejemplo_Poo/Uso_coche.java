@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ejemplo_objeto;
+package Ejemplo_Poo;
 
+import Ejemplo_Poo.Coche;
 import javax.swing.JOptionPane;
 
 /**
