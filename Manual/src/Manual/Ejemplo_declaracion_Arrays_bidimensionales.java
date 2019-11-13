@@ -13,7 +13,7 @@ public class Ejemplo_declaracion_Arrays_bidimensionales {
 
     public static void main(String[] args) {
 
-        /* int [][] numeros=new int[2][5];
+         int [][] numeros=new int[2][5];
         
         
          numeros[0][0]=2;
@@ -28,34 +28,35 @@ public class Ejemplo_declaracion_Arrays_bidimensionales {
          numeros[1][3]=11;
          numeros[1][4]=12;
         
-         //System.out.println(numeros[1][3]);
-         // for (int[] n:numeros){
+         System.out.println(numeros[1][3]);
+          for (int[] n:numeros){
         
         for(int na:n){
         
-        System.out.print(na] + " ");
+        System.out.print(na + " ");
+     
         
         }
         
          for (int i=0;i<2;i++){      //bucle for, normal
              
          for (int j=0;j<5;j++){
-                 
+                   
          System.out.println(numeros[i][j]);
          }
              
-         */
-        int[][] numeros = {
+         
+       /* int[][] numeros = {
             {10, 15, 26, 38, 88}, {20, 88, 96, 74, 21}};
 
-       /* for (int i = 0; i < 2; i++) {      //bucle for, normal
+        for (int i = 0; i < 2; i++) {      //bucle for, normal
             System.out.println();
             for (int j = 0; j < 5; j++) {
 
                 System.out.print(numeros[i][j] + " ");
             }
 
-        }*/
+        }
         
         
         
@@ -67,10 +68,11 @@ public class Ejemplo_declaracion_Arrays_bidimensionales {
         
         System.out.print(na + " ");
 
-    }
+    }*/
 }
 
         
     }
 
 }
+    }
