@@ -100,6 +100,13 @@ class Empleado1 {
         this.fecha_inicio = fecha_inicio;
     }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
+    
+
     public String getNombre() {
         return nombre;
     }
