@@ -28,17 +28,20 @@ public class Ejemplo_declaracion_Arrays_bidimensionales {
          numeros[1][3]=11;
          numeros[1][4]=12;
         
-         System.out.println(numeros[1][3]);
+       //  System.out.println(numeros[1][3]);
           for (int[] n:numeros){
         
         for(int na:n){
         
         System.out.print(na + " ");
-     
+            
         
-        }
+        } System.out.println("\n");
+          }
         
-         for (int i=0;i<2;i++){      //bucle for, normal
+        
+       
+       /*  for (int i=0;i<2;i++){      //bucle for, normal
              
          for (int j=0;j<5;j++){
                    
@@ -74,5 +77,4 @@ public class Ejemplo_declaracion_Arrays_bidimensionales {
         
     }
 
-}
-    }
+
