@@ -44,7 +44,7 @@ class Empleado {
     private int edad;
     private String puesto;
         // public static int numero_empleado=1;//tendria que ir poniendo cada vez que visiualizara un empleado, osea tendras que repetirlo constantemente;  Empleado.numero_empleado++;
-    private  int numero_empleado = 1;
+    private  int numero_empleado;
     private static int ref=1;
 
     public Empleado(String nombre, int edad/*,int ref*/) {//AL DECLARAR LA VARIAVLE COMO CONSTANTE DE CLASE
@@ -89,7 +89,7 @@ class Empleado {
     
     public static String numero_ref_empleado(){
         
-       return "El numero de empleado siguiente sera : "+ref; //Un metodo statc:  -no actua sobre objetos
+       return "El numero de empleado siguiente sera : "+ref; //Un metodo static:  -no actua sobre objetos
                                                             //                   -solo puede aceder a variables/contantes si son declaradas como static ej: private static int ref=1;
     }                                                       //                   -para llamarlo nombre_clase.nombre_metodo
 
