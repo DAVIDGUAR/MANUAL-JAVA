@@ -15,7 +15,7 @@ public class Ejemplo_sobrecarga_constructores {
 
     public static void main(String[] args) {
 
-        Empleado1 empleado1 = new Empleado1("david", 1000, 2002, 12, 11);
+       /* Empleado1 empleado1 = new Empleado1("david", 1000, 2002, 12, 11);
         Empleado1 empleado2 = new Empleado1("daniel", 1200, 2000, 2, 1);
         Empleado1 empleado3 = new Empleado1("david", 1500, 2001, 1, 21);
         
@@ -28,7 +28,8 @@ public class Ejemplo_sobrecarga_constructores {
         System.out.println("Nombre empleado = " + empleado2.getNombre() + " sueldo = " + empleado2.getSueldo() + "fecha de alta contrato = " + empleado2.getFecha_inicio());
         System.out.println("Nombre empleado = " + empleado3.getNombre() + " sueldo = " + empleado3.getSueldo() + "fecha de alta contrato = " + empleado3.getFecha_inicio());
 
-        /*     Empleado1[] mis_empleados = new Empleado1[5];
+        */
+        Empleado1[] mis_empleados = new Empleado1[5];
          mis_empleados[0] = new Empleado1("David", 1000, 2009, 9, 22);
          mis_empleados[1] = new Empleado1("Maria");
          mis_empleados[2] = new Empleado1("Daniel", 1200, 2018, 12, 06);
@@ -40,8 +41,25 @@ public class Ejemplo_sobrecarga_constructores {
          System.out.println("Nonbre= " + mis_empleados[i].getNombre() + ". Sueldo= " + mis_empleados[i].getSueldo() + ". Fecha contratacion= " + mis_empleados[i].getFecha_inicio());
 
          }
-         }*/
+         
+         for (Empleado1 e:mis_empleados){
+             
+             e.Subir_Sueldo(5);
+             
+             
+         }
+         
+         
+         for (Empleado1 a:mis_empleados){
+             
+             System.out.println("Nonbre= " + a.getNombre() + ". Sueldo= " + a.getSueldo() + ". Fecha contratacion= " + a.getFecha_inicio());
+            
+         }
+         
+        
+         }
     }
+//}
 
     class Empleado1 {
 
@@ -50,7 +68,7 @@ public class Ejemplo_sobrecarga_constructores {
         private double sueldo;
         private Date fecha_inicio;
         private int num;
-        private int idSiguiente, id;
+      
 
         // puedes hacer los constructores que quieras, mientras no se repita el numero de parametros. puede repetirse el mismo numero de parametros si son de diferente tipo(Strin,int,double).
         public Empleado1(String nombre, double sueldo, int anho, int mes, int dia) {
@@ -60,12 +78,11 @@ public class Ejemplo_sobrecarga_constructores {
 
             GregorianCalendar calendario = new GregorianCalendar(anho, mes - 1, dia);
             this.fecha_inicio = calendario.getTime();
-            ++idSiguiente;
-            id = idSiguiente;
+          
 
         }
 
-        /*  public Empleado1(String nom) {
+          public Empleado1(String nom) {
          this(nom, 740, 2000, 12, 31);
 
          }
@@ -84,11 +101,11 @@ public class Ejemplo_sobrecarga_constructores {
     
     
 
-         public Empleado1(String nombre, int num) {            no nos deja porque tiene 2 parametros igual que el de arriva String  y  int(aunque este int no tiene el mismo nombre).
+       /*  public Empleado1(String nombre, int num) {         //   no nos deja porque tiene 2 parametros igual que el de arriva String  y  int(aunque este int no tiene el mismo nombre).
          this.nombre = nombre;
          this.num = num;
          }
-     
+     */
 
          public Empleado1() {
         
@@ -96,7 +113,7 @@ public class Ejemplo_sobrecarga_constructores {
          }
     
     
-         */
+         
         public double getSueldo() {
             return sueldo;
         }
@@ -128,5 +145,13 @@ public class Ejemplo_sobrecarga_constructores {
 
         }
 
+    @Override
+    public String toString() {
+        return "nombre=" + nombre + ", sueldo=" + sueldo + ", fecha_inicio=" + fecha_inicio + ", id=" + idSiguiente ;
     }
-}
+        
+        
+        
+
+    }
+
