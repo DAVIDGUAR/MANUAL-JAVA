@@ -23,13 +23,17 @@ public class Ejemplo_polimorfismo_enlazado_dinamico {
 
         //para almacenar en un arrays diferentes clases de variantes(string,int,date,etc) hay que clear una clase y almacenar objetos dentro del arrays.
         
-        Empleado2[] mis_empleados = new Empleado2[6];
+        Empleado2[] mis_empleados = new Empleado2[7];
         mis_empleados[0] = new Empleado2("David", 1000, 2009, 9, 22);
         mis_empleados[1] = new Empleado2("Maria", 1500, 2000, 12, 2);
         mis_empleados[2] = new Empleado2("Daniel", 1200, 2018, 12, 06);
         mis_empleados[4] = jefe_RRHH;    // POLIMORFISMO  - almacenas un objeto de la clase jefatura en un arrays de tipo empleado.
         mis_empleados[3] = new Empleado2("Juan", 2000, 1999, 5, 14);
         mis_empleados[5] = new Jefatura("Carolina", 6000,1990, 2,3);// OBJETO TIPO JEFATURA
+        mis_empleados[6] = new Direccion("Carmen", 10000,1985, 2,3);
+        
+        Direccion director=(Direccion)mis_empleados[6];   //estamos casteando 
+        director.subir_sueldo_direcion(20000);
         
        Jefatura jefa_marketing=(Jefatura)mis_empleados[5]; //estamos casteando 
        jefa_marketing.subir_sueldo_jefarura(750);
@@ -108,7 +112,7 @@ class Empleado2 {
 
 }
 
-class Jefatura extends Empleado2 {
+/*final*/ class Jefatura extends Empleado2 {  //si declaro la clase como final. La clase director no hereda
 
     private double incentivo;
 
@@ -128,4 +132,33 @@ class Jefatura extends Empleado2 {
         return sueldo_jefatura + incentivo;
     }
 
+} 
+
+
+
+class Direccion extends Jefatura{
+
+    public Direccion(String nombre, double sueldo, int anho, int mes, int dia) {
+        super(nombre, sueldo, anho, mes, dia);
+    }
+    
+     public void subir_sueldo_direcion(double dirin) {
+
+        beneficios = dirin;
+
+    }
+    
+    
+    public double getSueldo(){
+        
+        double sueldo_direcion = super.getSueldo();
+        
+        return sueldo_direcion + beneficios;
+        
+        
+    }
+    
+    
+    private double beneficios;
+    
 }
