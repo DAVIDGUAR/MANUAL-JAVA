@@ -147,7 +147,7 @@ public class Ejemplo_sobrecarga_constructores {
 
     @Override
     public String toString() {
-        return "nombre=" + nombre + ", sueldo=" + sueldo + ", fecha_inicio=" + fecha_inicio + ", id=" + idSiguiente ;
+        return "nombre=" + nombre + ", sueldo=" + sueldo + ", fecha_inicio=" + fecha_inicio  ;
     }
         
         
