@@ -9,13 +9,10 @@ package Ejemplo_Interfaz_Propias;
  *
  * @author david
  */
-public interface Jefes extends Trabajadores{
+public interface Trabajadores {
     
+    public abstract int establece_bonus(int bonus);
     
-    public abstract String tomar_decisiones(String decisiones);
-    
-    
-    
-    
+    public static final int bonus_base=1500;
     
 }

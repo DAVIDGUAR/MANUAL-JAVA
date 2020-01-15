@@ -5,7 +5,6 @@
  */
 package Ejemplo_Interfaz_Propias;
 
-
 import java.util.Arrays;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -15,10 +14,8 @@ import java.util.GregorianCalendar;
  * @author david
  */
 public class Ejemplo_Interfaz_Propias {
-    
-    
-    
-     public static void main(String[] args) {
+
+    public static void main(String[] args) {
 
         Jefatura5 jefe_RRHH = new Jefatura5("Vicente", 5000, 1980, 01, 10);
         jefe_RRHH.subir_sueldo_jefarura(500);
@@ -31,12 +28,11 @@ public class Ejemplo_Interfaz_Propias {
         mis_empleados[3] = new Empleado5("Juan", 2000, 1999, 5, 14);
         mis_empleados[5] = new Jefatura5("Carolina", 6000, 1990, 2, 3);
 
-        Empleado5 director_comercial = new Jefatura5("Marta", 2000, 2019, 11, 3);
-        Comparable ejemplo=new Empleado5("Juan", 3000,2000,2,9);
-        
-      
-        
-        
+        Jefatura5 jefa_finanzas = (Jefatura5) mis_empleados[5];
+
+        System.out.println(jefa_finanzas.tomar_decisiones("Recorte de personal "));
+        System.out.println("El jefe "+jefa_finanzas.getNombre()+" tiene una gratificacion de : "+jefa_finanzas.establece_bonus(500));
+        System.out.println(mis_empleados[3].getNombre()+" tiene una gratificacion de: "+mis_empleados[3].establece_bonus(500));
 
         for (int i = 0; i < 1; i++) {
             mis_empleados[1].subir_sueldo(5);
@@ -54,7 +50,13 @@ public class Ejemplo_Interfaz_Propias {
     }
 }
 
-class Empleado5 implements Comparable {
+class Empleado5 implements Comparable, Trabajadores {
+
+    public int establece_bonus(int bonus){
+    
+    return bonus+Trabajadores.bonus_base;
+
+    }
 
     public Empleado5(String nombre, double sueldo, int anho, int mes, int dia) {
 
@@ -127,13 +129,28 @@ class Empleado5 implements Comparable {
 
 }
 
-class Jefatura5 extends Empleado5 {
+class Jefatura5 extends Empleado5 implements Jefes {
 
     private double incentivo;
 
     public Jefatura5(String nombre, double sueldo, int anho, int mes, int dia) {
         super(nombre, sueldo, anho, mes, dia);
     }
+
+    public String tomar_decisiones(String decisiones) {
+
+        return "Un miembro de la direcion a tomado la decision de: " + decisiones;
+
+    }
+    
+    public int establece_bonus(int bonus){
+        
+        int prima=2000;
+        return Trabajadores.bonus_base+prima+bonus;
+        
+    }
+    
+    
 
     public void subir_sueldo_jefarura(double in) {
 
@@ -147,12 +164,4 @@ class Jefatura5 extends Empleado5 {
         return sueldo_jefatura + incentivo;
     }
 
-}
-    
-    
-    
-    
-    
-    
-    
 }
