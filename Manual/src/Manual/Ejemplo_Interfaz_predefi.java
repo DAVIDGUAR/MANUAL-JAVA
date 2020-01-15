@@ -17,27 +17,27 @@ public class Ejemplo_Interfaz_predefi {
 
     public static void main(String[] args) {
 
-        Jefatura2 jefe_RRHH = new Jefatura2("Vicente", 5000, 1980, 01, 10);
+        Jefatura3 jefe_RRHH = new Jefatura3("Vicente", 5000, 1980, 01, 10);
         jefe_RRHH.subir_sueldo_jefarura(500);
 
        
-        Empleado4[] mis_empleados = new Empleado4[7];
-        mis_empleados[0] = new Empleado4("David", 1000, 2009, 9, 22);
-        mis_empleados[1] = new Empleado4("Maria", 1500, 2000, 12, 2);
-        mis_empleados[2] = new Empleado4("Daniel", 1200, 2018, 12, 06);
+        Empleado3[] mis_empleados = new Empleado3[7];
+        mis_empleados[0] = new Empleado3("David", 1000, 2009, 9, 22);
+        mis_empleados[1] = new Empleado3("Maria", 1500, 2000, 12, 2);
+        mis_empleados[2] = new Empleado3("Daniel", 1200, 2018, 12, 06);
         mis_empleados[4] = jefe_RRHH;    
-        mis_empleados[3] = new Empleado4("Juan", 2000, 1999, 5, 14);
-        mis_empleados[5] = new Jefatura2("Carolina", 6000, 1990, 2, 3);
-        mis_empleados[6] = new Direccion2("Carmen", 10000, 1985, 2, 3);
+        mis_empleados[3] = new Empleado3("Juan", 2000, 1999, 5, 14);
+        mis_empleados[5] = new Jefatura3("Carolina", 6000, 1990, 2, 3);
+        mis_empleados[6] = new Direccion3("Carmen", 10000, 1985, 2, 3);
 
-        Direccion2 director = (Direccion2) mis_empleados[6];  
+        Direccion3 director = (Direccion3) mis_empleados[6];  
         director.subir_sueldo_direcion(20000);
 
-        Jefatura2 jefa_marketing = (Jefatura2) mis_empleados[5]; 
+        Jefatura3 jefa_marketing = (Jefatura3) mis_empleados[5]; 
         jefa_marketing.subir_sueldo_jefarura(750);
 
       
-        for (Empleado4 e : mis_empleados) {
+        for (Empleado3 e : mis_empleados) {
 
             e.Subir_Sueldo(5);
 
@@ -50,7 +50,7 @@ public class Ejemplo_Interfaz_predefi {
         // TIENES QUE DECLARAR LA INTERFAZ EN LA CLASE
         // TIENES QUE CREAR UN METODO QUE PIDE LA INTERFAZ -- compareTo--
 
-        for (Empleado4 e : mis_empleados) {
+        for (Empleado3 e : mis_empleados) {
 
             System.out.println("Nonbre= " + e.getNombre() + ". Sueldo= " + e.getSueldo() + ". Fecha contratacion= " + e.getFecha_inicio());
 
@@ -58,7 +58,7 @@ public class Ejemplo_Interfaz_predefi {
     }
 }
 
-class Empleado4 implements Comparable {//DECLARACION DE INTERFAZ
+class Empleado3 implements Comparable {//DECLARACION DE INTERFAZ
 
     private String nombre;
     private double sueldo;
@@ -67,7 +67,7 @@ class Empleado4 implements Comparable {//DECLARACION DE INTERFAZ
     private static int idSiguiente;
 
     
-    public Empleado4(String nombre, double sueldo, int anho, int mes, int dia) {
+    public Empleado3(String nombre, double sueldo, int anho, int mes, int dia) {
         this.nombre = nombre;
 
         this.sueldo = sueldo;
@@ -91,7 +91,7 @@ class Empleado4 implements Comparable {//DECLARACION DE INTERFAZ
         
         // CREAMOS VARIABLE DE TIPO EMPLEADO Y CASTEAMOS LA VARIABLE ANTERIORMENTE QUE ERA DE OBJETO.
 
-        Empleado4 a = (Empleado4) miObjeto; 
+        Empleado3 a = (Empleado3) miObjeto; 
 
         
         //COMPARA LA VARIABLE SUELDO
@@ -145,11 +145,11 @@ class Empleado4 implements Comparable {//DECLARACION DE INTERFAZ
 
 }
 
- class Jefatura2 extends Empleado4 { 
+ class Jefatura3 extends Empleado3 { 
 
     private double incentivo;
 
-    public Jefatura2(String nombre, double sueldo, int anho, int mes, int dia) {
+    public Jefatura3(String nombre, double sueldo, int anho, int mes, int dia) {
         super(nombre, sueldo, anho, mes, dia);
     }
 
@@ -167,9 +167,9 @@ class Empleado4 implements Comparable {//DECLARACION DE INTERFAZ
 
 }
 
-class Direccion2 extends Jefatura2 {
+class Direccion3 extends Jefatura3 {
 
-    public Direccion2(String nombre, double sueldo, int anho, int mes, int dia) {
+    public Direccion3(String nombre, double sueldo, int anho, int mes, int dia) {
         super(nombre, sueldo, anho, mes, dia);
     }
 

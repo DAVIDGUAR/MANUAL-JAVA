@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Ejemplo_Interfaz;
+package Ejemplo_Interfaz_Propias;
+
 
 import java.util.Arrays;
 import java.util.Date;
@@ -13,37 +14,37 @@ import java.util.GregorianCalendar;
  *
  * @author david
  */
-public class Uso_empleado {
+public class Ejemplo_Interfaz_Propias {
+    
+    
+    
+     public static void main(String[] args) {
 
-    public static void main(String[] args) {
-        
-        
-        Jefatura2 jefe_RRHH=new Jefatura2("Vicente", 5000, 1980, 01,10);
+        Jefatura5 jefe_RRHH = new Jefatura5("Vicente", 5000, 1980, 01, 10);
         jefe_RRHH.subir_sueldo_jefarura(500);
-        
 
-        Empleado3[] mis_empleados = new Empleado3[6];
-        mis_empleados[0] = new Empleado3("David", 1000, 2009, 9, 22);
-        mis_empleados[1] = new Empleado3("Maria", 1500, 2000, 12, 2);
-        mis_empleados[2] = new Empleado3("Daniel", 1200, 2018, 12, 06);
-        mis_empleados[4] = jefe_RRHH;    // POLIMORFISMO  - almacenas un objeto de la clase jefatura en un arrays de tipo empleado.
-        mis_empleados[3] = new Empleado3("Juan", 2000, 1999, 5, 14);
-        mis_empleados[5] = new Jefatura2("Carolina", 6000, 1990, 2, 3);// OBJETO TIPO JEFATURA
+        Empleado5[] mis_empleados = new Empleado5[6];
+        mis_empleados[0] = new Empleado5("David", 1000, 2009, 9, 22);
+        mis_empleados[1] = new Empleado5("Maria", 1500, 2000, 12, 2);
+        mis_empleados[2] = new Empleado5("Daniel", 1200, 2018, 12, 06);
+        mis_empleados[4] = jefe_RRHH;
+        mis_empleados[3] = new Empleado5("Juan", 2000, 1999, 5, 14);
+        mis_empleados[5] = new Jefatura5("Carolina", 6000, 1990, 2, 3);
+
+        Empleado5 director_comercial = new Jefatura5("Marta", 2000, 2019, 11, 3);
+        Comparable ejemplo=new Empleado5("Juan", 3000,2000,2,9);
         
-        Jefatura2 jefa_finanzas=(Jefatura2) mis_empleados[5];
+      
         
-        jefa_finanzas.subir_sueldo_jefarura(55000);
-       
+        
 
         for (int i = 0; i < 1; i++) {
             mis_empleados[1].subir_sueldo(5);
 
         }
-        
-        
+
         Arrays.sort(mis_empleados);
-        
-        
+
         for (int i = 0; i < 6; i++) {
 
             System.out.println("Nonbre= " + mis_empleados[i].getNombre() + ", Sueldo= " + mis_empleados[i].getSueldo() + ", Fecha contratacion" + mis_empleados[i].getAlta_contrato());
@@ -53,9 +54,9 @@ public class Uso_empleado {
     }
 }
 
-class Empleado3 implements Comparable{
+class Empleado5 implements Comparable {
 
-    public Empleado3(String nombre, double sueldo, int anho, int mes, int dia) {
+    public Empleado5(String nombre, double sueldo, int anho, int mes, int dia) {
 
         this.nombre = nombre;
         this.sueldo = sueldo;
@@ -103,42 +104,34 @@ class Empleado3 implements Comparable{
         System.out.println("Nonbre= " + nombre + "\nSueldo= " + sueldo + "\nFecha contratacion" + alta_contrato);
 
     }
-    
-    
-    public int compareTo(Object miObjeto){
-        
-        Empleado3 otroEmpleado=(Empleado3)miObjeto;
-        
-        if(this.sueldo<otroEmpleado.sueldo){
-            
-             return -1;
-            
+
+    public int compareTo(Object miObjeto) {
+
+        Empleado5 otroEmpleado = (Empleado5) miObjeto;
+
+        if (this.sueldo < otroEmpleado.sueldo) {
+
+            return -1;
+
         }
-        
-        if(this.sueldo>otroEmpleado.sueldo){
-            
-            
+
+        if (this.sueldo > otroEmpleado.sueldo) {
+
             return 1;
-            
+
         }
-        
-        
+
         return 0;
-    
-   
-    
-    
-}
-    
-    
+
+    }
 
 }
 
-class Jefatura2 extends Empleado3 {  
+class Jefatura5 extends Empleado5 {
 
     private double incentivo;
 
-    public Jefatura2(String nombre, double sueldo, int anho, int mes, int dia) {
+    public Jefatura5(String nombre, double sueldo, int anho, int mes, int dia) {
         super(nombre, sueldo, anho, mes, dia);
     }
 
@@ -154,4 +147,12 @@ class Jefatura2 extends Empleado3 {
         return sueldo_jefatura + incentivo;
     }
 
+}
+    
+    
+    
+    
+    
+    
+    
 }

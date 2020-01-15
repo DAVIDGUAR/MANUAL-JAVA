@@ -22,12 +22,12 @@ public class Uso_empleado {
         jefe_RRHH.subir_sueldo_jefarura(500);
         
 
-        Empleado3[] mis_empleados = new Empleado3[6];
-        mis_empleados[0] = new Empleado3("David", 1000, 2009, 9, 22);
-        mis_empleados[1] = new Empleado3("Maria", 1500, 2000, 12, 2);
-        mis_empleados[2] = new Empleado3("Daniel", 1200, 2018, 12, 06);
+        Empleado2[] mis_empleados = new Empleado2[6];
+        mis_empleados[0] = new Empleado2("David", 1000, 2009, 9, 22);
+        mis_empleados[1] = new Empleado2("Maria", 1500, 2000, 12, 2);
+        mis_empleados[2] = new Empleado2("Daniel", 1200, 2018, 12, 06);
         mis_empleados[4] = jefe_RRHH;    // POLIMORFISMO  - almacenas un objeto de la clase jefatura en un arrays de tipo empleado.
-        mis_empleados[3] = new Empleado3("Juan", 2000, 1999, 5, 14);
+        mis_empleados[3] = new Empleado2("Juan", 2000, 1999, 5, 14);
         mis_empleados[5] = new Jefatura2("Carolina", 6000, 1990, 2, 3);// OBJETO TIPO JEFATURA
         
         Jefatura2 jefa_finanzas=(Jefatura2) mis_empleados[5];
@@ -53,9 +53,9 @@ public class Uso_empleado {
     }
 }
 
-class Empleado3 implements Comparable{
+class Empleado2 implements Comparable{
 
-    public Empleado3(String nombre, double sueldo, int anho, int mes, int dia) {
+    public Empleado2(String nombre, double sueldo, int anho, int mes, int dia) {
 
         this.nombre = nombre;
         this.sueldo = sueldo;
@@ -107,7 +107,7 @@ class Empleado3 implements Comparable{
     
     public int compareTo(Object miObjeto){
         
-        Empleado3 otroEmpleado=(Empleado3)miObjeto;
+        Empleado2 otroEmpleado=(Empleado2)miObjeto;
         
         if(this.sueldo<otroEmpleado.sueldo){
             
@@ -134,7 +134,7 @@ class Empleado3 implements Comparable{
 
 }
 
-class Jefatura2 extends Empleado3 {  
+class Jefatura2 extends Empleado2 {  
 
     private double incentivo;
 

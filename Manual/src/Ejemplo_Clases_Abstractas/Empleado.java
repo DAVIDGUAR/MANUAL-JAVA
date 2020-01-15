@@ -11,6 +11,7 @@ import java.util.GregorianCalendar;
 /**
  *
  * @author david
+ * 
  */
 public class Empleado extends Persona {
 
