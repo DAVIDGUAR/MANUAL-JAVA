@@ -34,7 +34,7 @@ public class Vehiculo {
   
     }
     
-    public void rellenar(){
+   public void rellenar(){
         
         this.marca = JOptionPane.showInputDialog("Introduce marca");
         this.modelo= JOptionPane.showInputDialog("Introduce modelo");
