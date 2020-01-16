@@ -109,4 +109,59 @@ class Reloj {
         
  }
 
+
+CLASE INTERNE LOCAL
+
+public static void main(String[] args) {
+
+        Reloj reloj1 = new Reloj();
+
+        reloj1.enMarcha(3000, true);
+
+        JOptionPane.showMessageDialog(null, "Pulsa para terminar");
+
+    }
+
+
+
+class Reloj {
+
+   
+    public void enMarcha(int intervalo, final boolean sonido) {
+
+     class DameLaHora implements ActionListener{            
+        
+        public void actionPerformed(ActionEvent e){
+            
+            Date ahora=new Date();
+            
+            System.out.println("Te pongo la hora cada 3 seg." + ahora);
+            
+            
+            if (sonido){
+                
+                Toolkit.getDefaultToolkit().beep();
+                
+                
+            }
+
+
+
+
+        ActionListener oyente = new DameLaHora();
+
+        Timer el_temporizador = new Timer(intervalo, oyente);
+
+        el_temporizador.start();
+
+    }
+    
+    
+    
+
+
+
+
+
+
  */
